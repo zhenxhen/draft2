@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 body, html {
     margin: 0;
     padding: 0;
@@ -10,6 +12,12 @@ body, html {
 #canvas-container {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas-container canvas {
     display: block;
 }
 
@@ -18,25 +26,26 @@ body, html {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    background: transparent;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 16px 24px;
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    min-width: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    min-width: 260px;
+    z-index: 10;
 }
 
 .control-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 15px;
+    justify-content: center;
+    gap: 10px;
 }
 
 .save-group {
@@ -58,11 +67,12 @@ body, html {
     transition: all 0.2s ease;
     color: #444;
     box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    flex-shrink: 0;
 }
 
 .icon-btn:hover {
-    background: transparent;
-    border-color: #d0d0d0;
+    background: rgba(0, 0, 0, 0.03);
+    border-color: #ccc;
     color: #000;
     transform: translateY(-1px);
 }
@@ -83,6 +93,7 @@ body, html {
     cursor: pointer;
     transition: border-color 0.2s;
     box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    font-family: inherit;
 }
 
 #save-size:hover {
@@ -90,7 +101,8 @@ body, html {
 }
 
 #seed-input {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     padding: 12px;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
@@ -103,6 +115,8 @@ body, html {
     transition: border-color 0.2s, box-shadow 0.2s;
     background: transparent;
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    letter-spacing: 0.5px;
 }
 
 #seed-input:focus {
